@@ -1,2 +1,5 @@
 import BaseText from './BaseText';
-export {BaseText};
+import Card from './Card';
+import TouchableButton from './TouchableButton';
+
+export {BaseText, Card, TouchableButton};

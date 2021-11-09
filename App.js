@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Text, useWindowDimensions} from 'react-native';
+import {Text, useWindowDimensions, Platform} from 'react-native';
 import {ThemeProvider} from 'react-native-magnus';
 import {NavigationContainer} from '@react-navigation/native';
 import MainNavigator from './src/navigator/MainNavigator';
