@@ -26,7 +26,7 @@ const DetailsScreen = props => {
       <FastlaneImage />
 
       <View style={styles.containerView}>
-        <Text style={styles.text}>Project made with Expo & Fastlane</Text>
+        <Text style={styles.text}>Project made with Expo</Text>
       </View>
     </>
   );

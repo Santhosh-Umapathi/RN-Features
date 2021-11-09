@@ -1,13 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   View,
   Text,
-  TextInput,
   StyleSheet,
   TouchableOpacity,
-  Button,
-  Image,
-  Flatlist,
   ScrollView,
 } from 'react-native';
 import MUIBackground from '../components/MUIComps/MUIBackground';
@@ -18,8 +14,6 @@ import {Ionicons} from '@expo/vector-icons';
 import FastlaneImage from '../components/FastlaneImage';
 import {useNavigation} from '@react-navigation/core';
 const HomeScreen = props => {
-  const {navigation} = props;
-
   const router = useNavigation();
 
   const Expenses = (t1, t2, t3) => (
@@ -87,7 +81,8 @@ const HomeScreen = props => {
 
         <View style={{flexDirection: 'row'}}>
           <Text>{t3}</Text>
-          <TouchableOpacity onPress={() => router.navigate(screenName)}>
+          <TouchableOpacity
+            onPress={() => screenName && router.navigate(screenName)}>
             <Ionicons
               name="ios-arrow-forward-circle-sharp"
               size={20}
@@ -122,7 +117,6 @@ const HomeScreen = props => {
       <MuiBottomCard bg="white" height={'45%'} dur={1000} del={800}>
         <ScrollView style={styles.bottomCardTwo}>
           {header}
-
           {row(
             'tv-outline',
             '#2B7BFF',
@@ -131,16 +125,9 @@ const HomeScreen = props => {
             '$50',
             'Details',
           )}
-          {row(
-            'heart-dislike',
-            'tomato',
-            'HeathKit',
-            '4 Transactions',
-            '$50',
-            '',
-          )}
+          {row('heart-dislike', 'tomato', 'HeathKit', '4 Transactions', '$50')}
           {row('log-in', 'salmon', 'Auth', '5 Transactions', '$50', 'Login')}
-          {row('cafe-outline', 'orange', 'Cafe', '15 Transactions', '$15', '')}
+          {row('cafe-outline', 'orange', 'Cafe', '15 Transactions', '$15')}
         </ScrollView>
       </MuiBottomCard>
     </>
