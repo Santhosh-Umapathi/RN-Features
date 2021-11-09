@@ -1,13 +1,15 @@
 {
   "expo": {
-    "name": "iSalone",
-    "slug": "iSalone",
+    "name": "RN Features",
+    "slug": "rn_features",
+    "privacy": "unlisted",
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -15,21 +17,17 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": false,
-      "bundleIdentifier": "com.develondigital.iSalone",
-      "buildNumber": "11"
+      "bundleIdentifier": "com.github.rn_features",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true
     },
     "android": {
+      "package": "com.github.rn_features",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.develondigital.iSalone",
-      "versionCode": 11
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "scheme": "iticketing"
+        "backgroundColor": "#FBFBFB"
+      }
+    }
   }
 }

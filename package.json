@@ -13,7 +13,10 @@
     "eject": "expo eject",
     "set:env:debug": "node ./scripts/set-env.js --env debug",
     "set:env:staging": "node ./scripts/set-env.js --env staging",
-    "set:env:release": "node ./scripts/set-env.js --env release"
+    "set:env:release": "node ./scripts/set-env.js --env release",
+    "export": "expo export --public-url https://develon.github.io/RN-Expo-Turtle-CLI/dist && rm -rf ~/.turtle/workingdir && open https://develon.github.io/RN-Expo-Turtle-CLI/dist/android-index.json",
+    "build:apk": "turtle build:android --public-url https://develon.github.io/RN-Expo-Turtle-CLI/dist/android-index.json -t apk -d $(pwd)/build/android/",
+    "build:aab": "turtle build:android --public-url https://develon.github.io/RN-Expo-Turtle-CLI/dist/android-index.json -d $(pwd)/build/android/"
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.1.0",
@@ -56,6 +59,5 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"
-  },
-  "private": true
+  }
 }
