@@ -1,15 +1,12 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
 
 //Components
 import BaseText from './BaseText';
-//Use this Touchable opacity to fix Android Bottom sheet Touchable opacity issue.
-import {TouchableOpacity} from '@gorhom/bottom-sheet';
-import {AppContext} from '../context';
+
 import TouchableButton from './TouchableButton';
 
 const PrimaryButton = props => {
-  const {appconfig} = useContext(AppContext);
   const {
     title = '',
     textStyle = {},
@@ -25,7 +22,7 @@ const PrimaryButton = props => {
   switch (type) {
     case 'primary':
       bStyle = {
-        backgroundColor: appconfig.maincolor,
+        backgroundColor: '#2B7BFF', //appconfig.maincolor,
         ...buttonStyle,
       };
       tStyle = {color: '#fff', ...textStyle};
@@ -35,12 +32,12 @@ const PrimaryButton = props => {
       bStyle = {
         backgroundColor: !disabled ? '#fff' : '#D3D3D3',
         borderWidth: 1,
-        borderColor: appconfig.maincolor,
+        borderColor: '#2B7BFF',
         borderRadius: 10,
         ...buttonStyle,
       };
       tStyle = {
-        color: appconfig.maincolor,
+        color: '#2B7BFF',
         ...textStyle,
       };
       break;
@@ -74,7 +71,7 @@ const PrimaryButton = props => {
           <ActivityIndicator
             animating={isLoading}
             size="small"
-            color={type === 'primary' ? '#fff' : appconfig.maincolor}
+            color={type === 'primary' ? '#fff' : ''}
           />
         </View>
       </TouchableButton>

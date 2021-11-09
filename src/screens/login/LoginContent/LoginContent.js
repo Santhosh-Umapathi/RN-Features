@@ -82,7 +82,7 @@ const LoginConent = () => {
 
       <PrimaryButton
         type="primary"
-        title=" Accedi"
+        title="Accedi"
         buttonStyle={{marginTop: 30}}
         onPress={loginHandler}
         isLoading={isLoading}

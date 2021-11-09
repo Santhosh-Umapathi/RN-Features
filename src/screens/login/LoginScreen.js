@@ -1,28 +1,11 @@
-import React, {
-  useRef,
-  useCallback,
-  useState,
-  useEffect,
-  useContext,
-} from 'react';
-import {
-  ScrollView,
-  View,
-  StyleSheet,
-  Animated,
-  Alert,
-  Platform,
-} from 'react-native';
+import React, {useRef, useCallback, useEffect} from 'react';
+import {ScrollView, View, StyleSheet, Animated, Platform} from 'react-native';
 import {useFocusEffect} from '@react-navigation/core';
 
 //Components
 import PrimaryButton from '../../components/PrimaryButton';
-// import BottomSheetModal from '../../components/BottomSheetModal';
 import {BaseText} from '../../components';
 import BaseConent from './BaseContent/BaseContent';
-// import LoginConent from './LoginContent/LoginContent';
-import TextLink from '../../components/TextLink';
-import {AppContext} from '../../context';
 import {Dropdown} from 'react-native-magnus';
 import * as AuthSession from 'expo-auth-session';
 import * as WebBrowser from 'expo-web-browser';
@@ -53,13 +36,8 @@ function convertBufferToString(buffer) {
 }
 
 const LoginScreen = ({navigation}) => {
-  const {appconfig, isUserLoggedIn, setIsUserLoggedIn, saveUser, deviceSize} =
-    useContext(AppContext);
-
   //Custom i18n
   const {t, changeLanguage} = useLanguage();
-
-  const logo = appconfig.logo;
 
   const slideAnim = useRef(new Animated.Value(0.2)).current;
   const loginBottomSheet = useRef();
@@ -137,9 +115,6 @@ const LoginScreen = ({navigation}) => {
 
       const user = JSON.stringify({sub, email, given_name, family_name});
       await storeLocalData('user_info', user);
-
-      setIsUserLoggedIn(!isUserLoggedIn);
-      saveUser(sub, email, given_name, family_name);
     }
   };
 
@@ -152,19 +127,15 @@ const LoginScreen = ({navigation}) => {
     };
   }, []);
 
-  const promptSomething = () => Alert.alert('LINK');
-
   return (
     <>
       <ScrollView style={styles.containerView}>
         <Animated.Image
-          source={{
-            uri: logo,
-          }}
+          source={require('../../../assets/brand.png')}
           resizeMode="contain"
           height="auto"
           style={{
-            height: deviceSize === 'small' ? 200 : 400,
+            height: 400,
             width: '80%',
             alignSelf: 'center',
             marginVertical: 20,
@@ -185,23 +156,7 @@ const LoginScreen = ({navigation}) => {
           onPress={() => languageRef.current.open()}
         />
 
-        {/* <PrimaryButton
-          title="Guida"
-          type="secondary"
-          onPress={promptSomething}
-        /> */}
-
         <View style={styles.footer}>
-          {/* <BaseText>{'Selezionando accedi, accetti i'}</BaseText>
-          <View style={styles.textContainer}>
-            <TextLink message="Termini di servizio" onPress={promptSomething} />
-            <BaseText>{'e le'}</BaseText>
-            <TextLink
-              message="Norme sulla Privacy."
-              onPress={promptSomething}
-            />
-          </View> */}
-
           <View style={styles.versionContainer}>
             <BaseText>{`${t?.version} ${Constants.manifest.version} (${
               Platform.OS === 'ios'
@@ -212,7 +167,6 @@ const LoginScreen = ({navigation}) => {
         </View>
 
         <Dropdown ref={dropdownRef} showSwipeIndicator={true} roundedTop="md">
-          {/* <Dropdown.Option disabled /> */}
           <Dropdown.Option onPress={() => promptAsync({useProxy})}>
             <BaseConent
               onPress={() => promptAsync({useProxy})}

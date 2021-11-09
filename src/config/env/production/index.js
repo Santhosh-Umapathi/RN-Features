@@ -2,12 +2,12 @@
 export const env = {
   // Here you can put all your Release environment variables accessible from Javascript.
   name: 'RELEASE',
-  endpoint: 'https://standpass.ilsalonenautico.com/api/v1/',
-  issuer: 'https://account.ilsalonenautico.com/auth/realms/dticketing',
-  clientId: 'b2b',
-  clientSecret: '23ef7462-1c9a-4daa-8f50-fe04677b6db4',
-  baseUrl: 'https://a.ilsalonenautico.com',
-  realm: 'dticketing',
-  username: 'b2buser@dticketing.com',
-  password: 'b2buser',
+  endpoint: 'http://192.168.1.56:3000/api/v1/',
+  issuer: 'https://google.com',
+  clientId: 'rn_features',
+  clientSecret: '8abb7e8b-0fc2-4a7b-9d69-d0c32eb3a494',
+  baseUrl: 'https://google.com',
+  realm: 'RN-Features',
+  username: 'test@test.com',
+  password: 'test',
 };

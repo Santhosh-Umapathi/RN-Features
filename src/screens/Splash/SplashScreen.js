@@ -38,8 +38,7 @@ const SplashScreen = ({children, color}) => {
   );
 };
 
-const AnimatedSplashScreen = ({children, image, color = '#233260'}) => {
-  // console.log('🚀 --- AnimatedSplashScreen --- color', color);
+const AnimatedSplashScreen = ({children, image, color}) => {
   const [isAppReady, setAppReady] = useState(false);
   const [isSplashAnimationComplete, setAnimationComplete] = useState(false);
 

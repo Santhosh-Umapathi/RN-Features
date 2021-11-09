@@ -8,6 +8,7 @@ import {
   Button,
   Image,
   Flatlist,
+  ScrollView,
 } from 'react-native';
 import MUIBackground from '../components/MUIComps/MUIBackground';
 import MuiBottomCard from '../components/MUIComps/MUIBottomCard';
@@ -15,8 +16,11 @@ import MuiBottomCard from '../components/MUIComps/MUIBottomCard';
 // import Icon from 'react-native-vector-icons/dist/Ionicons';
 import {Ionicons} from '@expo/vector-icons';
 import FastlaneImage from '../components/FastlaneImage';
+import {useNavigation} from '@react-navigation/core';
 const HomeScreen = props => {
   const {navigation} = props;
+
+  const router = useNavigation();
 
   const Expenses = (t1, t2, t3) => (
     <View>
@@ -46,7 +50,7 @@ const HomeScreen = props => {
     </View>
   );
 
-  const row = (icon, color, t1, t2, t3) => (
+  const row = (icon, color, t1, t2, t3, screenName) => (
     <View
       style={{
         marginHorizontal: 20,
@@ -83,12 +87,14 @@ const HomeScreen = props => {
 
         <View style={{flexDirection: 'row'}}>
           <Text>{t3}</Text>
-          <Ionicons
-            name="ios-arrow-forward-circle-sharp"
-            size={20}
-            color="black"
-            style={{marginHorizontal: 10}}
-          />
+          <TouchableOpacity onPress={() => router.navigate(screenName)}>
+            <Ionicons
+              name="ios-arrow-forward-circle-sharp"
+              size={20}
+              color="black"
+              style={{marginHorizontal: 10}}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -103,7 +109,7 @@ const HomeScreen = props => {
       <MuiBottomCard
         bg="#0A0211"
         shadowBg="#0A0211"
-        height={'50%'}
+        height={'56%'}
         dur={1000}
         del={500}>
         <View style={styles.bottomCardOne}>
@@ -113,13 +119,29 @@ const HomeScreen = props => {
         </View>
       </MuiBottomCard>
 
-      <MuiBottomCard bg="white" height={'35%'} dur={1000} del={800}>
-        <View style={styles.bottomCardTwo}>
+      <MuiBottomCard bg="white" height={'45%'} dur={1000} del={800}>
+        <ScrollView style={styles.bottomCardTwo}>
           {header}
 
-          {row('cafe-outline', 'orange', 'Cafe', '15 Transactions', '$15')}
-          {row('tv-outline', 'red', 'Netflix', '5 Transactions', '$50')}
-        </View>
+          {row(
+            'tv-outline',
+            '#2B7BFF',
+            'Animations',
+            '2 Transactions',
+            '$50',
+            'Details',
+          )}
+          {row(
+            'heart-dislike',
+            'tomato',
+            'HeathKit',
+            '4 Transactions',
+            '$50',
+            '',
+          )}
+          {row('log-in', 'salmon', 'Auth', '5 Transactions', '$50', 'Login')}
+          {row('cafe-outline', 'orange', 'Cafe', '15 Transactions', '$15', '')}
+        </ScrollView>
       </MuiBottomCard>
     </>
   );
@@ -138,7 +160,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   bottomCardTwo: {
-    justifyContent: 'space-around',
+    // justifyContent: 'space-around',
   },
 });
 

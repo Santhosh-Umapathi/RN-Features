@@ -3,7 +3,7 @@ export default {
   logout: 'Esci',
   accept: 'Accedi',
   proceed: 'Procedere',
-  acceptBrand: 'Accedi con',
+  acceptBrand: 'Accedi session',
   english: 'Inglese',
   italian: 'Italiano',
   customerScreen: {
