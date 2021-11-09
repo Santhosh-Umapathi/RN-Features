@@ -1,3 +1,3 @@
 import Constants from 'expo-constants';
-const slug = "iSalone" //Constants.manifest.slug;
+const slug = 'rn_features'; //Constants.manifest.slug;
 export {slug};
