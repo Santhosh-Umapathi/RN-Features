@@ -1,8 +1,8 @@
 ![image](https://i.ibb.co/8N1zSRC/ezgif-com-gif-maker.gif)
 
-# Expo-Turtle-CLI
+# RN Features
 
-_[Expo Turtle CLI](https://develon.github.io/RN-Expo-Turtle-CLI/), a project made with Expo and Turtle CLI_
+_[RN Features](https://santhosh-umapathi.github.io/RN-Features/), a project made with Expo, Turtle CLI_
 
 > Authors: Santhosh Umapathi
 
@@ -59,20 +59,20 @@ Build files can be found under `/build/android` or `/build/ios`
 
 ## Build Pages
 
-- [Android](https://develon.github.io/RN-Expo-Turtle-CLI/dist/android-index.json)
-- [iOS](https://develon.github.io/RN-Expo-Turtle-CLI/dist/ios-index.json)
+- [Android](https://santhosh-umapathi.github.io/RN-Features/dist/android-index.json)
+- [iOS](https://santhosh-umapathi.github.io/RN-Features/dist/ios-index.json)
 
 ## Project Structure
 
 - assets
-  - config
-  - font
-  - imgs
-  - icons
-- components
-- constants
-- navigation
-- screens
+- src
+- - api
+- - components
+- - config
+- - hooks
+- - navigator
+- - screens
+- - utils
 
 ## Demo ENV
 
@@ -84,12 +84,28 @@ EXPO_ANDROID_KEYSTORE_PASSWORD=""
 EXPO_ANDROID_KEY_PASSWORD=""
 ```
 
+## Features
+
+This project was created for educational purposes.
+
+- Locations
+- Camera
+- Permissions
+- Env's
+- Custom Scripts
+- Animations
+- Custom Translations
+- Expo Splash Screen
+
 ## Learn More
 
+To learn more about the about features, take a look at the following resources:
+
+- [Expo](https://docs.expo.dev/) - Expo Docs
 - [Turtle CLI](https://github.com/expo/turtle-cli-example)
 - [Expo Custom Server](https://docs.expo.dev/distribution/hosting-your-app/)
 - [Expo - Turtle CLI ](https://docs.expo.dev/distribution/turtle-cli/#install-turtle-cli)
 
 ## License
 
-2021 © App City
+###### - App City @2021
