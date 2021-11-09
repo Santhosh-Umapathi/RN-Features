@@ -125,7 +125,14 @@ const HomeScreen = props => {
             '$50',
             'Details',
           )}
-          {row('heart-dislike', 'tomato', 'HeathKit', '4 Transactions', '$50')}
+          {row(
+            'heart-dislike',
+            'tomato',
+            'HeathKit',
+            '4 Transactions',
+            '$50',
+            'Dashboard',
+          )}
           {row('log-in', 'salmon', 'Auth', '5 Transactions', '$50', 'Login')}
           {row('cafe-outline', 'orange', 'Cafe', '15 Transactions', '$15')}
         </ScrollView>

@@ -1,14 +1,5 @@
-import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  TouchableOpacity,
-  Button,
-  Image,
-  Flatlist,
-} from 'react-native';
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
 import FastlaneImage from '../components/FastlaneImage';
 import MUIBackground from '../components/MUIComps/MUIBackground';
 
