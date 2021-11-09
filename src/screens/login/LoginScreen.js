@@ -101,7 +101,6 @@ const LoginScreen = ({navigation}) => {
   }, [result]);
 
   const loadUserInfo = async result => {
-    // console.log('🚀  --- ~ result', {result, request});
     if (result?.type === 'success') {
       const {accessToken, issuedAt, expiresIn} = result?.authentication;
       // console.log('🚀 --- LoginScreen --- accessToken', accessToken);

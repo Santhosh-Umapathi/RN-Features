@@ -1,23 +1,11 @@
 import {useFocusEffect} from '@react-navigation/native';
-import React, {useState, useRef, useEffect, useCallback} from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  TouchableOpacity,
-  Button,
-  Image,
-  Flatlist,
-  useWindowDimensions,
-  Animated,
-  InteractionManager,
-} from 'react-native';
+import React, {useRef, useCallback} from 'react';
+import {View, StyleSheet, useWindowDimensions, Animated} from 'react-native';
 
 const MUIBackground = props => {
   const window = useWindowDimensions();
 
-  const {navigation, bg, bgAlt, left, right} = props;
+  const {bg, bgAlt, left, right} = props;
 
   const slideAnim = useRef(new Animated.Value(right ? 100 : -100)).current;
 

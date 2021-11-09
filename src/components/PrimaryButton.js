@@ -22,7 +22,7 @@ const PrimaryButton = props => {
   switch (type) {
     case 'primary':
       bStyle = {
-        backgroundColor: '#2B7BFF', //appconfig.maincolor,
+        backgroundColor: '#2B7BFF',
         ...buttonStyle,
       };
       tStyle = {color: '#fff', ...textStyle};

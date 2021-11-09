@@ -20,21 +20,6 @@ const BaseText = ({variant = 'normal', children, style}, props) => {
       ...finalStyle,
     };
   }
-  // console.log('\n\n');
-  // console.log(`--${children}--`);
-  // console.log(
-  //   '---data---',
-  //   JSON.stringify(
-  //     {
-  //       textStyles: textStyles[variant],
-  //       style: style,
-  //       finalStyle: finalStyle,
-  //     },
-  //     null,
-  //     4,
-  //   ),
-  // );
-  // console.log('\n\n');
 
   return <Text style={finalStyle}>{children}</Text>;
 };
