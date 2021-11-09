@@ -82,7 +82,10 @@ const HomeScreen = props => {
         <View style={{flexDirection: 'row'}}>
           <Text>{t3}</Text>
           <TouchableOpacity
-            onPress={() => screenName && router.navigate(screenName)}>
+            onPress={() =>
+              screenName &&
+              router.navigate(screenName, {icon, color, t1, t2, t3})
+            }>
             <Ionicons
               name="ios-arrow-forward-circle-sharp"
               size={20}
